@@ -1,0 +1,284 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Editorial Portfolio Design System - Clean, Modern, Premium
+All colors MUST be HSL for consistency.
+*/
+
+@layer base {
+  :root {
+    /* Core Colors - Dark Theme */
+    --background: 222 84% 4%; /* Deep dark background */
+    --foreground: 210 40% 98%; /* Light text */
+
+    /* Card & Surface Colors */
+    --card: 222 84% 6%; /* Slightly lighter dark */
+    --card-foreground: 210 40% 98%;
+    --card-hover: 222 84% 8%; /* Hover state */
+
+    /* Surface Colors */
+    --popover: 222 84% 6%;
+    --popover-foreground: 210 40% 98%;
+
+    /* Brand Colors - Futuristic Tech Dark */
+    --primary: 271 91% 65%; /* Brighter Purple for dark theme #A855F7 */
+    --primary-foreground: 222 84% 4%;
+
+    /* Futuristic Tech Accents - Enhanced for Dark */
+    --purple: 271 91% 65%; /* Bright Purple #A855F7 */
+    --purple-dark: 271 91% 55%;
+    --purple-light: 271 91% 75%;
+    --cyan: 187 100% 55%; /* Brighter Cyan #00D4FF */
+    --cyan-dark: 187 100% 45%;
+    --cyan-light: 187 100% 65%;
+
+    /* Typography Colors */
+    --text-primary: 210 40% 98%; /* Light text */
+    --text-secondary: 215 20.2% 65.1%; /* Muted light text */
+    --text-accent: 215.4 16.3% 46.9%; /* Darker muted text */
+
+    /* Surface Variations */
+    --secondary: 217.2 32.6% 17.5%;
+    --secondary-foreground: 210 40% 98%;
+    
+    --muted: 217.2 32.6% 17.5%;
+    --muted-foreground: 215 20.2% 65.1%;
+
+    --accent: 271 91% 65%; /* Purple accent */
+    --accent-foreground: 222 84% 4%;
+
+    /* Functional Colors */
+    --destructive: 0 75% 60%;
+    --destructive-foreground: 210 40% 98%;
+
+    /* Form & Interactive */
+    --border: 217.2 32.6% 17.5%;
+    --input: 217.2 32.6% 17.5%;
+    --ring: 271 91% 65%;
+
+    /* Dark Theme Shadows with Glow */
+    --shadow-sm: 0px 1px 3px hsla(0, 0%, 0%, 0.5);
+    --shadow-md: 0px 4px 12px hsla(0, 0%, 0%, 0.6);
+    --shadow-lg: 0px 8px 25px hsla(0, 0%, 0%, 0.7);
+    --shadow-hover: 0px 6px 20px hsla(271, 91%, 65%, 0.3);
+    --shadow-glow: 0px 0px 30px hsla(271, 91%, 65%, 0.2);
+
+    /* Dark Futuristic Gradients */
+    --gradient-purple: linear-gradient(135deg, hsl(271, 91%, 65%), hsl(271, 91%, 75%));
+    --gradient-cyan: linear-gradient(135deg, hsl(187, 100%, 55%), hsl(187, 100%, 65%));
+    --gradient-tech: linear-gradient(135deg, hsl(271, 91%, 65%), hsl(187, 100%, 55%));
+    --gradient-hero: linear-gradient(135deg, hsl(222, 84%, 4%), hsl(222, 84%, 6%));
+    --gradient-dark: linear-gradient(180deg, hsl(222, 84%, 4%), hsl(222, 84%, 6%));
+
+    /* Animation Timings */
+    --transition-fast: 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-smooth: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-elegant: 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+
+    /* Layout */
+    --radius: 0.5rem;
+    --radius-lg: 0.75rem;
+    --radius-xl: 1rem;
+
+    /* Spacing Scale */
+    --section-padding: 5rem;
+    --content-width: 1200px;
+  }
+
+  .dark {
+    --background: 222.2 84% 4.9%;
+    --foreground: 210 40% 98%;
+
+    --card: 222.2 84% 4.9%;
+    --card-foreground: 210 40% 98%;
+
+    --popover: 222.2 84% 4.9%;
+    --popover-foreground: 210 40% 98%;
+
+    --primary: 210 40% 98%;
+    --primary-foreground: 222.2 47.4% 11.2%;
+
+    --secondary: 217.2 32.6% 17.5%;
+    --secondary-foreground: 210 40% 98%;
+
+    --muted: 217.2 32.6% 17.5%;
+    --muted-foreground: 215 20.2% 65.1%;
+
+    --accent: 217.2 32.6% 17.5%;
+    --accent-foreground: 210 40% 98%;
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 217.2 32.6% 17.5%;
+    --input: 217.2 32.6% 17.5%;
+    --ring: 212.7 26.8% 83.9%;
+    --sidebar-background: 240 5.9% 10%;
+    --sidebar-foreground: 240 4.8% 95.9%;
+    --sidebar-primary: 224.3 76.3% 48%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 240 3.7% 15.9%;
+    --sidebar-accent-foreground: 240 4.8% 95.9%;
+    --sidebar-border: 240 3.7% 15.9%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-family: 'Inter', sans-serif;
+    line-height: 1.6;
+    scroll-behavior: smooth;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Playfair Display', serif;
+    font-weight: 600;
+    line-height: 1.2;
+  }
+}
+
+@layer components {
+  /* Editorial Typography */
+  .text-hero {
+    @apply text-5xl md:text-6xl lg:text-7xl font-bold leading-tight;
+    font-family: 'Playfair Display', serif;
+  }
+
+  .text-display {
+    @apply text-3xl md:text-4xl lg:text-5xl font-semibold;
+    font-family: 'Playfair Display', serif;
+  }
+
+  .text-headline {
+    @apply text-2xl md:text-3xl font-medium;
+    font-family: 'Playfair Display', serif;
+  }
+
+  .text-body-large {
+    @apply text-lg md:text-xl leading-relaxed;
+  }
+
+  .text-label {
+    @apply text-sm font-medium uppercase tracking-wider;
+  }
+
+  /* Editorial Cards */
+  .card-editorial {
+    @apply bg-card rounded-lg p-8 transition-all duration-300;
+    box-shadow: var(--shadow-sm);
+  }
+
+  .card-editorial:hover {
+    @apply transform -translate-y-1;
+    box-shadow: var(--shadow-hover);
+  }
+
+  /* Dark Futuristic Gradients */
+  .bg-hero-gradient {
+    background: var(--gradient-hero);
+  }
+
+  .bg-purple-gradient {
+    background: var(--gradient-purple);
+  }
+
+  .bg-cyan-gradient {
+    background: var(--gradient-cyan);
+  }
+
+  .bg-tech-gradient {
+    background: var(--gradient-tech);
+  }
+
+  .bg-dark-gradient {
+    background: var(--gradient-dark);
+  }
+
+  /* Animation Classes */
+  .animate-fade-up {
+    animation: fadeUp 0.6s ease-out forwards;
+  }
+
+  .animate-stagger-1 {
+    animation: fadeUp 0.6s ease-out 0.1s forwards;
+    opacity: 0;
+  }
+
+  .animate-stagger-2 {
+    animation: fadeUp 0.6s ease-out 0.2s forwards;
+    opacity: 0;
+  }
+
+  .animate-stagger-3 {
+    animation: fadeUp 0.6s ease-out 0.3s forwards;
+    opacity: 0;
+  }
+
+  /* Section Spacing */
+  .section-padding {
+    @apply py-20 lg:py-24;
+  }
+
+  .container-editorial {
+    @apply max-w-6xl mx-auto px-6 lg:px-8;
+  }
+}
+
+@layer utilities {
+  .shadow-editorial {
+    box-shadow: var(--shadow-md);
+  }
+
+  .shadow-editorial-hover {
+    box-shadow: var(--shadow-hover);
+  }
+
+  .shadow-glow {
+    box-shadow: var(--shadow-glow);
+  }
+
+  .transition-editorial {
+    transition: var(--transition-smooth);
+  }
+}
+
+/* Keyframe Animations */
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideInRight {
+  from {
+    opacity: 0;
+    transform: translateX(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
